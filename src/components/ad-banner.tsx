@@ -44,7 +44,7 @@ export function AdBanner({ slot = 'XXXXXXXX', format = 'auto', className = '' }:
       <ins
         className="adsbygoogle"
         style={{ display: 'block' }}
-        data-ad-client="ca-pub-XXXXXXXX"
+        data-ad-client="ca-pub-8238362660579323"
         data-ad-slot={slot}
         data-ad-format={format}
         data-full-width-responsive="true"
@@ -80,7 +80,7 @@ export function SideAdBanner({ slot = 'XXXXXXXX', position }: SideAdBannerProps)
       <ins
         className="adsbygoogle"
         style={{ display: 'block' }}
-        data-ad-client="ca-pub-XXXXXXXX"
+        data-ad-client="ca-pub-8238362660579323"
         data-ad-slot={slot}
         data-ad-format="vertical"
       />
