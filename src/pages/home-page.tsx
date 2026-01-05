@@ -1,5 +1,5 @@
 import Icon from '@mdi/react'
-import { mdiYoutube, mdiCellphone, mdiFileMusic, mdiAlertCircleOutline } from '@mdi/js'
+import { mdiFileMusic, mdiClockFast, mdiTextBox, mdiAlertCircleOutline } from '@mdi/js'
 import { TranscriptionForm } from '../components/transcription-form'
 import { TranscriptionResult } from '../components/transcription-result'
 import { LoadingSpinner } from '../components/loading-spinner'
@@ -8,7 +8,7 @@ import { Footer } from '../components/footer'
 import { useTranscription } from '../hooks/use-transcription'
 
 export function HomePage() {
-  const { transcription, isLoading, error, transcribeFromUrl, transcribeFromFile, reset } = useTranscription()
+  const { transcription, isLoading, error, transcribeFromFile, transcribeFromUrl, reset } = useTranscription()
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-beresol-cream to-white flex flex-col">
@@ -37,10 +37,10 @@ export function HomePage() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
               <h1 className="text-3xl md:text-4xl font-bold text-beresol-black mb-3">
-                Free Video & Audio Transcription
+                Free Audio & Video Transcription
               </h1>
               <p className="text-gray-600 text-lg">
-                Convert YouTube, Instagram, TikTok videos or audio files to text instantly
+                Upload files or paste URLs from TikTok, Instagram, Twitter & more
               </p>
             </div>
 
@@ -54,8 +54,8 @@ export function HomePage() {
             ) : (
               <>
                 <TranscriptionForm
-                  onSubmitUrl={transcribeFromUrl}
                   onSubmitFile={transcribeFromFile}
+                  onSubmitUrl={transcribeFromUrl}
                   isLoading={isLoading}
                 />
 
@@ -83,29 +83,29 @@ export function HomePage() {
             <div className="mt-12 grid md:grid-cols-3 gap-6">
               <div className="bg-white rounded-xl p-6 shadow-sm">
                 <div className="mb-3 text-beresol-green">
-                  <Icon path={mdiYoutube} size={1.5} />
-                </div>
-                <h3 className="font-semibold text-lg mb-2">YouTube</h3>
-                <p className="text-gray-600 text-sm">
-                  Paste any YouTube video URL to get an instant transcription
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <div className="mb-3 text-beresol-green">
-                  <Icon path={mdiCellphone} size={1.5} />
-                </div>
-                <h3 className="font-semibold text-lg mb-2">Social Media</h3>
-                <p className="text-gray-600 text-sm">
-                  Works with Instagram Reels and TikTok videos too
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <div className="mb-3 text-beresol-green">
                   <Icon path={mdiFileMusic} size={1.5} />
                 </div>
-                <h3 className="font-semibold text-lg mb-2">File Upload</h3>
+                <h3 className="font-semibold text-lg mb-2">Files & URLs</h3>
                 <p className="text-gray-600 text-sm">
-                  Upload MP3, MP4, WAV or WebM files directly (up to 25MB)
+                  Upload files or paste URLs from TikTok, Instagram, Twitter, Vimeo & more
+                </p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm">
+                <div className="mb-3 text-beresol-green">
+                  <Icon path={mdiClockFast} size={1.5} />
+                </div>
+                <h3 className="font-semibold text-lg mb-2">Fast Processing</h3>
+                <p className="text-gray-600 text-sm">
+                  Get accurate transcriptions in seconds with AI-powered technology
+                </p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm">
+                <div className="mb-3 text-beresol-green">
+                  <Icon path={mdiTextBox} size={1.5} />
+                </div>
+                <h3 className="font-semibold text-lg mb-2">Copy & Download</h3>
+                <p className="text-gray-600 text-sm">
+                  Easily copy the text or download it as a file for your needs
                 </p>
               </div>
             </div>

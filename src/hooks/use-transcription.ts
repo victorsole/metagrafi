@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react'
-import { transcribeUrl, transcribeFile, TranscriptionResult } from '../lib/supabase'
+import { transcribeUrl, transcribeFile, TranscriptionResult } from '../lib/api'
 
 interface UseTranscriptionReturn {
   transcription: string | null

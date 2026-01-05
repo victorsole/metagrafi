@@ -36,8 +36,7 @@ jobs:
         env:
           CI: true
           SITE_URL: ${{ inputs.site-url }}
-          VITE_SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt2b2hwbmVjaHh0dmd5ZmpwdmhxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc1NDUxMzgsImV4cCI6MjA4MzEyMTEzOH0.S2gsue98p3ta_5wt5isKzqY4HN0V4E2IOhKVPv1YCd0
-          VITE_SUPABASE_URL: https://kvohpnechxtvgyfjpvhq.supabase.co
+          VITE_API_URL: https://metagrafi-api-695670671962.europe-west1.run.app
         run: |
           npm ci
           npm run build

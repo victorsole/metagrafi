@@ -18,16 +18,19 @@ declare global {
 }
 
 export function AdBanner({ slot = 'XXXXXXXX', format = 'auto', className = '' }: AdBannerProps) {
+  const isDev = import.meta.env.DEV
+
   useEffect(() => {
+    if (isDev) return // Don't load ads in development
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({})
     } catch (e) {
       console.error('AdSense error:', e)
     }
-  }, [])
+  }, [isDev])
 
   // In development, show a placeholder
-  if (import.meta.env.DEV) {
+  if (isDev) {
     return (
       <div className={`my-6 ${className}`}>
         <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
@@ -54,16 +57,19 @@ export function AdBanner({ slot = 'XXXXXXXX', format = 'auto', className = '' }:
 }
 
 export function SideAdBanner({ slot = 'XXXXXXXX', position }: SideAdBannerProps) {
+  const isDev = import.meta.env.DEV
+
   useEffect(() => {
+    if (isDev) return // Don't load ads in development
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({})
     } catch (e) {
       console.error('AdSense error:', e)
     }
-  }, [])
+  }, [isDev])
 
   // In development, show a placeholder
-  if (import.meta.env.DEV) {
+  if (isDev) {
     return (
       <div className="w-full">
         <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-4 text-center min-h-[600px] flex items-center justify-center">

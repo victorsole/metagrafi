@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Icon from '@mdi/react'
 import { mdiYoutube, mdiInstagram, mdiMusicNote, mdiFileUpload, mdiLink } from '@mdi/js'
-import { getAdminStats, AdminStats, TranscriptionRecord } from '../lib/supabase'
+import { getAdminStats, AdminStats, TranscriptionRecord } from '../lib/api'
 import { LoadingSpinner } from './loading-spinner'
 
 interface AdminPanelProps {
